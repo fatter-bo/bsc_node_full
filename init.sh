@@ -1,8 +1,8 @@
 #!/bin/bash
 
-wget  https://github.com/binance-chain/bsc/releases/download/v1.1.5/geth_linux
+wget  https://github.com/binance-chain/bsc/releases/download/v1.1.6/geth_linux
 
-wget https://github.com/binance-chain/bsc/releases/download/v1.1.5/mainnet.zip
+wget https://github.com/binance-chain/bsc/releases/download/v1.1.6/mainnet.zip
 unzip mainnet.zip
 
 ./geth_linux --datadir node init genesis.json
@@ -11,9 +11,9 @@ unzip mainnet.zip
 #手工操作上一行配置
 
 #下载最新节点的snapshot,很大
-nohup wget -q -O - 'https://tf-dex-prod-public-snapshot-site1.s3-accelerate.amazonaws.com/geth-20211130.tar.gz?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Signature=JO6wxZZBqheEZTzgD6mMy7GbmVk%3D&Expires=1640890607' | tar -zxvf - &
+#nohup wget -q -O - 'https://tf-dex-prod-public-snapshot-site1.s3-accelerate.amazonaws.com/geth-20211202.tar.gz?AWSAccessKeyId=AKIAYINE6SBQPUZDDRRO&Signature=JO6wxZZBqheEZTzgD6mMy7GbmVk%3D&Expires=1640890607' | tar -zxvf - &
 
 #转移到节点目录
-mv server/data-seed/geth/chaindata node/geth/
-mv server/data-seed/geth/triecache node/geth/
+#mv server/data-seed/geth/chaindata node/geth/
+#mv server/data-seed/geth/triecache node/geth/
 
