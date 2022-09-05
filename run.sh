@@ -12,4 +12,27 @@
 
 
 ## start a full node 6G内存
-nohup ./geth_linux  --diffsync  --verbosity=3 --syncmode full --config ./config.toml --datadir ${PWD}/node  --cache 8192 --rpc.allow-unprotected-txs --txlookuplimit 0  --http --http.addr 0.0.0.0 --http.port 28545 --ws --ws.addr 0.0.0.0 --ws.port 28546 &
+nohup ./geth_linux_mempool \
+        --diffsync \
+        --verbosity=3 \
+        --syncmode=snap \
+        --config ./config.toml \
+        --datadir ${PWD}/node \
+        --cache 16384 \
+         --port 30363 \
+         --nat extip:54.172.214.21 \
+        --http.api eth,net,web3,txpool,admin,miner \
+         --rpc.allow-unprotected-txs \
+        --txlookuplimit 0 \
+        --txpool.journal '' \
+        --txpool.pricebump 1 \
+        --txpool.accountslots 4 \
+        --txpool.globalslots 32 \
+        --txpool.accountqueue 64 \
+        --txpool.globalqueue 1024 \
+        --txpool.lifetime '00h00m10s' \
+        --maxpeers 1200 \
+        --miner.delayleftover '200ms' \
+        --http --http.addr 0.0.0.0 --http.port 28565 \
+        --ws --ws.addr 0.0.0.0 --ws.port 28566 &
+
