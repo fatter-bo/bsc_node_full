@@ -1,8 +1,8 @@
 #!/bin/bash
 
-wget  https://github.com/binance-chain/bsc/releases/download/v1.1.6/geth_linux
+#wget  https://github.com/binance-chain/bsc/releases/download/v1.1.6/geth_linux
 
-wget https://github.com/binance-chain/bsc/releases/download/v1.1.6/mainnet.zip
+wget https://github.com/binance-chain/bsc/releases/download/v1.1.16/mainnet.zip
 unzip mainnet.zip
 
 ./geth_linux --datadir node init genesis.json
@@ -16,4 +16,5 @@ unzip mainnet.zip
 #转移到节点目录
 #mv server/data-seed/geth/chaindata node/geth/
 #mv server/data-seed/geth/triecache node/geth/
+
 

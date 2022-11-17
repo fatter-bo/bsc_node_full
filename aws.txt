@@ -1,0 +1,59 @@
+挂载单磁盘
+sudo mkfs -t xfs /dev/nvme0n1
+mkdir /data/
+sudo mount /dev/nvme0n1 /data
+扩容
+gdisk /dev/nvme2n1
+
+大磁盘模式
+https://aws.amazon.com/cn/premiumsupport/knowledge-center/create-lv-on-ebs-volume/
+https://blog.icmoc.com/2020/1/24/combine-two-nvme-drive-to-one-drive-on-ubuntu
+
+pvcreate /dev/nvme1n1 /dev/nvme0n1
+vgcreate nvme /dev/nvme0n1
+vgextend nvme /dev/nvme1n1
+lvcreate -L3.4T -n database nvme
+mount /dev/mapper/nvme-database /data
+
+
+自动挂载
+sudo lsblk -o +UUID
+/etc/fstab
+UUID=f02f2886-8bd9-45ea-bfe6-f5ba6ff16c1c  /data  xfs  defaults,nofail  0  2
+
+
+wget -c https://dl.google.com/go/go1.17.linux-amd64.tar.gz
+
+tar zxvf go1.17.linux-amd64.tar.gz
+
+mv go /usr/local/
+
+apt-get install build-essential
+     sudo apt update && apt upgrade -y
+     apt-get install build-essential
+     apt install nodejs
+     apt install npm
+     npm install -g npm@8.1.2
+     npm install -g yarn //需要退出再进入
+     npm i pm2 -g
+     pm2 list
+     pm2 uninstall pm2-logrotate
+     pm2 install pm2-logrotate
+     sudo apt install mongodb
+     df -h
+     sudo apt install mongodb
+     npm i -g nvm
+     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash #需要退出
+     wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+     nvm install 16.13.1
+     wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+     nvm install 16.13.1
+     wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+     nvm
+     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+     nvm install 16.13.1
+
+
+apt-get install unzip
+
+

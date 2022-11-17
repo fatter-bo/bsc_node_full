@@ -6,5 +6,6 @@
 #sudo docker attach 76e980019fe8
 #cd /root/.ethereum
 #./geth_linux --datadir=node attach ipc:./geth.ipc console
-./geth_linux attach http://127.0.0.1:28545
+./geth_linux_confirm attach http://127.0.0.1:28545
+
 
